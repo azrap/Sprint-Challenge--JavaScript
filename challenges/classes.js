@@ -6,10 +6,10 @@
     this.width = properties.width;
     this.height = properties.height;
   }
-  volume(length,width,height){
+  volume(){
     return this.length*this.width*this.height;
   }
-  surfaceArea(length,width,height){
+  surfaceArea(){
     return 2*(this.length * this.width + this.length * this.height + this.width * this.height);
   }
 
@@ -33,9 +33,24 @@ class CubeMaker extends CuboidMaker {
 
   cubeVol(){
 
+   return Math.pow(this.width,3);
   }
-  
+
   cubeSA(){
+  
+    return 6*(Math.pow(this.width,2));
 
   }
 }
+
+
+const cube= new CubeMaker({
+  length: 5,
+  width: 5,
+  height: 5
+});
+
+console.log(cube);
+
+console.log(cube.cubeVol());
+console.log(cube.cubeSA());
